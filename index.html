@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Cloudflare Pages + Functions</h1>
+  <button onclick="getTime()">What time is it?</button>
+  <p id="display"></p>
+
+  <script>
+    async function getTime() {
+      // Calls the function at /time
+      const response = await fetch('/time');
+      const data = await response.json();
+      document.getElementById('display').innerText = "The server says: " + data.time;
+    }
+  </script>
+</body>
+</html>
+
