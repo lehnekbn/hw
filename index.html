@@ -12,7 +12,7 @@
       const responseA = await fetch('/a');
       const data = await response.json();
       const dataA = await responseA.json();
-      document.getElementById('display').innerText = dataA.val; // "The server says: " + data.time + " for " + data.name;
+      document.getElementById('display').innerText = "val:" + dataA.val; // "The server says: " + data.time + " for " + data.name;
     }
   </script>
 </body>
