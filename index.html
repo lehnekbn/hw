@@ -4,6 +4,7 @@
   <h1>Cloudflare Pages + Functions</h1>
   <button onclick="getTime()">What time is it?</button>
   <p id="display"></p>
+  <p id="time"></p>
 
   <script>
     async function getTime() {
@@ -13,6 +14,7 @@
       const data = await response.json();
       const dataA = await responseA.json();
       document.getElementById('display').innerText = "val:" + dataA.val; // "The server says: " + data.time + " for " + data.name;
+      document.getElementById('time').innerText = "The server says: " + data.time + " for " + data.name;
     }
   </script>
 </body>
