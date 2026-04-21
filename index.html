@@ -20,7 +20,7 @@
       const responseA = await fetch('/' + val);
         const dataA = await responseA.json();
       
-      document.getElementById('display').innerText = "val:" + dataA.val;
+      document.getElementById('display').innerText = "val is " + dataA.val;
       document.getElementById('time').innerText = "The server says: " + data.time;
     }
   </script>
