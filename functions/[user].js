@@ -1,3 +1,4 @@
 export async function onRequest(context) {
-  return new Response(context.params.user);
+  return new Response(
+		JSON.stringify({ val: context.params.user }))
 }
