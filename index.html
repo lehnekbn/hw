@@ -11,7 +11,7 @@
       const response = await fetch('/time');
       const responseA = await fetch('/time/a');
       const data = await response.json();
-      const dataA = await response.jsonA();
+      const dataA = await response.json();
       document.getElementById('display').innerText = dataA.val; // "The server says: " + data.time + " for " + data.name;
     }
   </script>
