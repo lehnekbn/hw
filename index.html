@@ -6,19 +6,22 @@
   
   <textarea id="name" placeholder="Enter your name">abc</textarea>
 
-  <p id="display"></p>
-  <p id="time"></p>
+  <p id="display">(display)</display></p>
+  <p id="time">(time)</p>
 
   <script>
     async function getTime() {
       // Calls the function at /time
       const response = await fetch('/time');
+      const data = await response.json();
+      document.getElementById('time').innerText = "The server says: " + data.time + " for " + data.name;
+           
       const val = document.getElementById('name').value;
       const responseA = await fetch('/' + val);
-      const data = await response.json();
-      const dataA = await responseA.json();
-      document.getElementById('display').innerText = "val:" + dataA.val; // "The server says: " + data.time + " for " + data.name;
-      document.getElementById('time').innerText = "The server says: " + data.time + " for " + data.name;
+        const dataA = await responseA.json();
+      
+      document.getElementById('display').innerText = "val:" + dataA.val;
+      document.getElementById('time').innerText = "The server says: " + data.time;
     }
   </script>
 </body>
