@@ -2,7 +2,7 @@
 export async function onRequest(context) {
   const currentTime = new Date().toLocaleTimeString();
   
-  return new Response("V2 The time:   "+JSON.stringify({ time: currentTime }), {
+  return new Response(JSON.stringify({ time: currentTime , name: "Kalle"}), {
     headers: { "Content-Type": "application/json" }
   });
 }
