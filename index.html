@@ -3,6 +3,9 @@
 <body>
   <h1>Cloudflare Pages + Functions</h1>
   <button onclick="getTime()">What time is it?</button>
+  
+  <textarea id="name" placeholder="Enter your name">abc</textarea>
+
   <p id="display"></p>
   <p id="time"></p>
 
@@ -10,7 +13,8 @@
     async function getTime() {
       // Calls the function at /time
       const response = await fetch('/time');
-      const responseA = await fetch('/abc');
+      const val = document.getElementById('name').value;
+      const responseA = await fetch('/' + val);
       const data = await response.json();
       const dataA = await responseA.json();
       document.getElementById('display').innerText = "val:" + dataA.val; // "The server says: " + data.time + " for " + data.name;
