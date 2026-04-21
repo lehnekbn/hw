@@ -9,7 +9,7 @@
     async function getTime() {
       // Calls the function at /time
       const response = await fetch('/time');
-      const responseA = await fetch('/time/a');
+      const responseA = await fetch('/a');
       const data = await response.json();
       const dataA = await responseA.json();
       document.getElementById('display').innerText = dataA.val; // "The server says: " + data.time + " for " + data.name;
