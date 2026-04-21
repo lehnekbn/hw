@@ -10,7 +10,7 @@
       // Calls the function at /time
       const response = await fetch('/time');
       const data = await response.json();
-      document.getElementById('display').innerText = "The server says: " + data.time;
+      document.getElementById('display').innerText = "The server says: " + data.time + " for " data.name;
     }
   </script>
 </body>
