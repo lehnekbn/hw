@@ -14,11 +14,12 @@
    <p id="number">(number)</p>
 
   <script>
-    function isPrime(n) {
-      return n+1;
-    }
+  
     
     async function getTime() {
+       function isPrime(n) {
+          return n+1;
+        }
       // Calls the function at /time
       const response = await fetch('/time');
       const data = await response.json();
@@ -29,7 +30,7 @@
         const dataA = await responseA.json();
 
       const input = document.getElementById('number').value;
-      let isPrime = isPrime(inout);
+      let isPrime = isPrime(input);
       document.getElementById('number').innerText = "is prime? " + isPrime;
       
       document.getElementById('display').innerText = "val is " + dataA.val;
