@@ -17,7 +17,7 @@
   
     
     async function getTime() {
-       function isPrime(n) {
+       function chkPrime(n) {
           return n+1;
         }
       // Calls the function at /time
@@ -30,7 +30,7 @@
         const dataA = await responseA.json();
 
       const input = document.getElementById('number').value;
-      let isPrime = isPrime(input);
+      let isPrime = chkPrime(input);
       document.getElementById('number').innerText = "is prime? " + isPrime;
       
       document.getElementById('display').innerText = "val is " + dataA.val;
