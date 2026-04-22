@@ -3,18 +3,21 @@
 <body>
   <h1>V2 Cloudflare Pages + Functions</h1>
 
- <p>button1</p> 
-
   <button onclick="getTime()">V2 What time is it?</button>
-  
- <p>button2</p> 
-    
+   
   <textarea id="name" placeholder="Enter your name">abc</textarea>
-
+  
+ <textarea id="number" placeholder="Enter your name">13</textarea>
+  
   <p id="display">(display)</display></p>
   <p id="time">(time)</p>
+   <p id="number">(number)</p>
 
   <script>
+    isPrime(n) {
+      return n+1;
+    }
+    
     async function getTime() {
       // Calls the function at /time
       const response = await fetch('/time');
@@ -24,6 +27,10 @@
       const val = document.getElementById('name').value;
       const responseA = await fetch('/' + val);
         const dataA = await responseA.json();
+
+      const input = document.getElementById('number').value;
+      let isPrime = isPrime(inout);
+      document.getElementById('number').innerText = "is prime? " + isPrime;
       
       document.getElementById('display').innerText = "val is " + dataA.val;
       document.getElementById('time').innerText = "The server says: " + data.time;
