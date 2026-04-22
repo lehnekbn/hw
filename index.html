@@ -20,18 +20,20 @@
       
        function chkPrime(n) {
          let result=true;
+         let factor=n;
          let t0=(new Date).getTime();
          if (n%2==0) return false;
          let i=3;
          while (i*i<n) {
            if (n % i == 0) {
              result= false;
+             factor=i;
              break;
            }
            i+=2;
         }
          let t1=(new Date).getTime();
-         let msg= "prime? " + result + " time (ms)=" + (t1-t0) + "factor=" + (n/i);
+         let msg= "prime? " + result + " time (ms)=" + (t1-t0) + "factor=" + i;
          return msg;
        }
       
