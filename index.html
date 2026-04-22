@@ -3,7 +3,7 @@
 <body>
   <h1>V2 Cloudflare Pages + Functions</h1>
 
-  <button onclick="getTime()">V2 What time is it?</button>
+  <button onclick="getTime()">calc</button>
    
   <textarea id="name" placeholder="Enter your name">abc</textarea>
   
@@ -31,27 +31,25 @@
            i+=2;
         }
          let t1=(new Date).getTime();
-         
-         alert("time (ms)="+(t1-t0));
-         
-         return result;
+         let msg= "prime? " + result + " time (ms)=" + (t1-t0):
+         return msg;
        }
       
       // Calls the function at /time
-      const response = await fetch('/time');
-      const data = await response.json();
-      document.getElementById('time').innerText = "The server says: " + data.time + " for " + data.name;
+      //const response = await fetch('/time');
+      //const data = await response.json();
+      //document.getElementById('time').innerText = "The server says: " + data.time + " for " + data.name;
            
-      const val = document.getElementById('name').value;
-      const responseA = await fetch('/' + val);
-        const dataA = await responseA.json();
+   //   const val = document.getElementById('name').value;
+   //   const responseA = await fetch('/' + val);
+   //     const dataA = await responseA.json();
 
       const input = Number(document.getElementById('numberTA').value);
-      let isPrime = chkPrime(input);
-            document.getElementById('number').innerText = "is prime? " + isPrime;
+      let msg = chkPrime(input);
+      document.getElementById('number').innerText = msg;
       
-      document.getElementById('display').innerText = "val is " + dataA.val;
-      document.getElementById('time').innerText = "The server says: " + data.time;
+     // document.getElementById('display').innerText = "val is " + dataA.val;
+     // document.getElementById('time').innerText = "The server says: " + data.time;
     }
   </script>
 </body>
