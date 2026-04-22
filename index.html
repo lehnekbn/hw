@@ -29,7 +29,7 @@
       const responseA = await fetch('/' + val);
         const dataA = await responseA.json();
 
-      const input = document.getElementById('number').value;
+      const input = Number(document.getElementById('number').value);
       let isPrime = chkPrime(input);
       document.getElementById('number').innerText = "is prime? " + isPrime;
       
