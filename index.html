@@ -18,8 +18,16 @@
     
     async function getTime() {
        function chkPrime(n) {
-          return n+1;
+         let i=3;
+         while (i*i<n) {
+           if (n % i == 0) {
+             return false;
+           }
+           i+=2;
         }
+         return true;
+       }
+      
       // Calls the function at /time
       const response = await fetch('/time');
       const data = await response.json();
@@ -31,8 +39,7 @@
 
       const input = Number(document.getElementById('numberTA').value);
       let isPrime = chkPrime(input);
-      alert(input); alert(isPrime);
-      document.getElementById('number').innerText = "is prime? " + isPrime;
+            document.getElementById('number').innerText = "is prime? " + isPrime;
       
       document.getElementById('display').innerText = "val is " + dataA.val;
       document.getElementById('time').innerText = "The server says: " + data.time;
