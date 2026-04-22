@@ -19,15 +19,22 @@
     async function getTime() {
       
        function chkPrime(n) {
+         let result=true;
+         let t0=(new Date).getTime();
          if (n%2==0) return false;
          let i=3;
          while (i*i<n) {
            if (n % i == 0) {
-             return false;
+             result= false;
+             break;
            }
            i+=2;
         }
-         return true;
+         let t1=(new Date).getTime();
+         
+         alert("time (ms)="+(t2-t0));
+         
+         return result;
        }
       
       // Calls the function at /time
