@@ -7,7 +7,7 @@
    
   <textarea id="name" placeholder="Enter your name">abc</textarea>
   
- <textarea id="number" placeholder="Enter your name">13</textarea>
+ <textarea id="numberTA" placeholder="Enter your name">13</textarea>
   
   <p id="display">(display)</display></p>
   <p id="time">(time)</p>
@@ -29,8 +29,9 @@
       const responseA = await fetch('/' + val);
         const dataA = await responseA.json();
 
-      const input = Number(document.getElementById('number').value);
+      const input = Number(document.getElementById('numberTA').value);
       let isPrime = chkPrime(input);
+      alert(input); alert(isPrime);
       document.getElementById('number').innerText = "is prime? " + isPrime;
       
       document.getElementById('display').innerText = "val is " + dataA.val;
